@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+
 
 
 @Component({
@@ -16,8 +18,23 @@ export class TemplateComponent  {
 usuario = {
   nombre: null,
   apellldo: null,
-  correo: null
-}
+  correo: null,
+  pais: '',
+  sexo: 'Femenino',
+  acepta: false
+};
+
+paises = [
+  {
+  nombre: 'Mexico',
+  codigo: 'MxN'
+ },
+ {
+  nombre: 'España',
+  codigo: 'Esp'
+ }
+];
+sexos = ['Femenino', 'Masculino'];
   constructor() { }
 
   Guardar(forma: NgForm) {
